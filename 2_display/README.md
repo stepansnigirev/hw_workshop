@@ -39,11 +39,12 @@ Label lbl;   /* label in the global scope, we will change text from the button c
 int cnt = 0; /* click counter */
 
 /* button callback */
-static void callback(Button * b){
+static lv_res_t callback(lv_obj_t * btn){
   cnt++;
   char msg[40];
   sprintf(msg, "Button clicked %d times!", cnt);
   lbl.text(msg);
+  return LV_RES_OK;
 }
 
 int main() {
@@ -70,10 +71,8 @@ int main() {
 
 ## Hints
 
-We should create 4 buttons, one for every LED. As every button does the same stuff we don't want to rewrite the function 4 times. We can assign a unique number to the button and then read it using `button.id(i)`. You can
+We should create 4 buttons, one for every LED. As every button does the same stuff we don't want to rewrite the function 4 times. We can assign a unique number to the button and then read it using `button.id(i)`. You can get this value from the callback function as this function gets the pointer to the button. As it is a pointer you need to use `button->id` instead of `button.id`.
 
 ## Solution
 
-[Solution code](https://os.mbed.com/users/stepansnigirev/code/1_blinky_solved/), [explanation](./solved.md)
-
-[Solution with a button](https://os.mbed.com/users/stepansnigirev/code/1_blinky_solved_btn/), [explanation](./solved.md#solution-to-step-1-control-direction-with-a-button)
+[Solution code](https://os.mbed.com/users/stepansnigirev/code/2_display_solved/), [explanation](./solved.md)
