@@ -69,4 +69,4 @@ DigitalIn button(USER_BUTTON);
 
 [Solution code](https://os.mbed.com/users/stepansnigirev/code/1_blinky_solved/), [explanation](./solved.md)
 
-[Solution with a button](https://os.mbed.com/users/stepansnigirev/code/1_blinky_solved_btn/), [explanation](./solved_btn.md)
+[Solution with a button](https://os.mbed.com/users/stepansnigirev/code/1_blinky_solved_btn/), [explanation](./solved.md)
