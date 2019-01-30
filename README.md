@@ -12,22 +12,11 @@ There are two pretty convenient ways to start with mbed:
 - Online: register on [mbed.com](https://www.mbed.com/en/) and click on [Compiler](https://ide.mbed.com/compiler/). You will get to web IDE. Don't forget to add the [board](https://os.mbed.com/platforms/ST-Discovery-F469NI/) to the compiler ("Add to compiler" button).
 - Offline: install [PlatformIO](https://platformio.org/platformio-ide) for Atom or Visual Studio Code.
 
-## Step 1. Blinky
+## Table of contents
 
-First thing that everyone does on a new board - blinks with LEDs. Our board has 4, so let's blink with all of them!
-
-This is a simple example of how to blink with one LED in mbed:
-
-[hw_workshop_1-blinky](https://github.com/stepansnigirev/hw_workshop_1-blinky)
-
-Instead of blinking with 1 LED make it cycle over all 4 of them one after another ([solution](https://github.com/stepansnigirev/hw_workshop_1-blinky_solved)).
-
-Advanced: Make it react on the user button: when we hold the button the direction of the LEDs cycle should be reversed ([solution](https://github.com/stepansnigirev/hw_workshop_1-blinky_solved_btn)).
-
-## Step 2. Driving the display
-
-## Step 3. Working with Bitcoin library
-
-## Step 4. Working with SD card
-
-## Step 5. Putting all together 
+- [Step 1. Blinky.](./1_blinky/README.md) Blink with LEDs.
+- [Step 2. Display.](./2_display/README.md) Drive a display and make a very simple GUI (label + button)
+- [Step 3. Bitcoin!](./3_bitcoin/README.md) Import wallet from mnemonic phrase, generate addresses and show them on screen.
+- [Step 4. QR codes.](./4_qrcode/README.md) Export master public key to electrum, show receiving addresses as QR codes.
+- [Step 5. SD card.](./5_sdcard/README.md) Parse unsigned transaction from electrum, show it on screen, sign and save back to SD card.
+- [Step 6. Final polish](./5_final/README.md) Show signed transaction as a QR code.
