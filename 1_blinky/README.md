@@ -17,15 +17,14 @@ We start by importing the `mbed.h` library. It has a bunch of very convenient cl
 
 DigitalOut led(LED1); // LED1 is the pin name of our first built-in LED. Others are LED2, LED3 and LED4
 
-
 int main(){
-	// this while loop will run forever
-	while(1){
-		led = 0; // switch the led value to 0
-		wait(1); // wait one second
-		led = 1; // switch the led value to 1
-		wait(1); // wait another second
-	}
+  // this while loop will run forever
+  while(1){
+    led = 0; // switch the led value to 0
+    wait(1); // wait one second
+    led = 1; // switch the led value to 1
+    wait(1); // wait another second
+  }
 }
 ```
 
@@ -40,14 +39,30 @@ If we run this code we will notice that `led=0` turns the LED on, and `led=1` tu
 DigitalOut led(LED1); // LED1 is the pin name of our first built-in LED. Others are LED2, LED3 and LED4
 
 int main(){
-	// this while loop will run forever
-	while(1){
-		led = HIGH; // switch the led value to 0
-		wait(1); // wait one second
-		led = LOW; // switch the led value to 1
-		wait(1); // wait another second
-	}
+  // this while loop will run forever
+  while(1){
+    led = HIGH; // switch the led value to 0
+    wait(1); // wait one second
+    led = LOW; // switch the led value to 1
+    wait(1); // wait another second
+  }
 }
+```
+
+## Hints
+
+As we need to drive 4 LEDs now, it makes sense to put the in an array. Otherwise the code will be awful.
+We can also define a variable that will store our current active LED.
+
+```cpp
+DigitalOut leds[] = { (LED1), (LED2), (LED3), (LED4) };
+int current_led = 0;
+```
+
+To read the state of the button we can use `DigitalIn` class. We can check if the button is pressed with a simple if statement `if(button){ /* do something */ }`.
+
+```cpp
+DigitalIn button(USER_BUTTON);
 ```
 
 ## Solution
