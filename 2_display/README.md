@@ -71,7 +71,7 @@ int main() {
 
 ## Hints
 
-We should create 4 buttons, one for every LED. As every button does the same stuff we don't want to rewrite the function 4 times. We can assign a unique number to the button and then read it using `button.id(i)`. You can get this value from the callback function as this function gets the pointer to the button. As it is a pointer you need to use `button->id` instead of `button.id`.
+We should create 4 buttons, one for every LED. As every button does the same stuff we don't want to rewrite the function 4 times. We can assign a unique number to the button and then read it using `button.id(i)`. You can get this value from the callback function. This function gets the pointer to the lvgl object, but it can be converted to a Button class using `Button button(btn)`. After this you have access to `button.id()` and other methods we used befode.
 
 ## Solution
 
