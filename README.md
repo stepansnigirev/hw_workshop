@@ -19,4 +19,4 @@ There are two pretty convenient ways to start with mbed:
 - [Step 3. Bitcoin!](./3_bitcoin/README.md) Import wallet from mnemonic phrase, generate addresses and show them on screen.
 - [Step 4. QR codes.](./4_qrcode/README.md) Export master public key to electrum, show receiving addresses as QR codes.
 - [Step 5. SD card.](./5_sdcard/README.md) Parse unsigned transaction from electrum, show it on screen, sign and save back to SD card.
-- [Step 6. Final polish](./5_final/README.md) Show signed transaction as a QR code.
+- [Step 6. Final steps.](./5_final/README.md) Show signed transaction as a QR code.
