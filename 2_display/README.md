@@ -52,13 +52,13 @@ int main() {
   gui.init();
 
   /* Create a label to log clicks */
-  lbl = gui.label("Hello display!");
+  lbl = Label("Hello display!");
   lbl.size(gui.width(), 100); // full width
   lbl.position(0, 200);
   lbl.align_text(ALIGN_TEXT_CENTER);
 
   /* Create a button */
-  Button btn = gui.button(callback, "Click me!");
+  Button btn(callback, "Click me!");
   btn.size(300, 100);
   btn.position(0, 300);
   btn.align(ALIGN_CENTER);
