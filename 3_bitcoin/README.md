@@ -44,6 +44,15 @@ And now we can display our address on the screen:
 Label lbl(address);
 ```
 
+To add QR codes we can use a `QR` class. It works very similar to `Label`:
+
+```cpp
+QR qr("bitcoin:"+address);
+qr.size(300);
+``` 
+
+As QR code is a square, we use only one size in `size()` method.
+
 Full code:
 
 ```cpp
@@ -56,6 +65,7 @@ using std::string;
 
 GUI gui;     /* our GUI instance */
 Label lbl;   /* label in the global scope, we will change text from the button callback */
+QR qr;       /* QR in the global scope, we will change text from the button callback */
 
 /* we gonna use testnet here, will be used in address generation and key derivation */
 /* to switch to the mainnet just change this to false */
@@ -63,9 +73,9 @@ Label lbl;   /* label in the global scope, we will change text from the button c
 
 int main() {
 
-    /* init the key. handy tool: https://iancoleman.io/bip39/ */
-  HDPrivateKey hd("rhythm witness display knock head cable era exact submit boost exile seek topic pool sound", "my secret password", USE_TESTNET);
-  HDPrivateKey first_key = hd.hardenedChild(84).hardenedChild(1).hardenedChild(0).child(0).child(0);
+  /* init the key. handy tool: https://iancoleman.io/bip39/ */
+  HDPrivateKey hd("rhythm witness display knock head cable era exact submit boost exile seek topic pool sound", "my secret password");
+  HDPrivateKey first_key = hd.hardenedChild(84).hardenedChild(USE_TESTNET).hardenedChild(0).child(0).child(0);
   string address = first_key.address();
 
   gui.init();
@@ -73,8 +83,13 @@ int main() {
   /* Create a label to display addresses and xpub */
   lbl = Label(address);
   lbl.size(gui.width()-40, 100); // full width
-  lbl.position(20, 200);
+  lbl.position(20, 400);
   lbl.align_text(ALIGN_TEXT_CENTER);
+
+  qr = QR("bitcoin:"+address);
+  qr.size(300);
+  qr.position(0, 50);
+  qr.align(ALIGN_CENTER);
 
   while(1) {
     gui.update();

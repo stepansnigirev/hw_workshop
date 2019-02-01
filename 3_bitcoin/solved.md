@@ -10,7 +10,7 @@ First, we will be working on the same account, and as children key derivation is
 #define USE_TESTNET true
 
 /* init the key. handy tool: https://iancoleman.io/bip39/ */
-HDPrivateKey hd("rhythm witness display knock head cable era exact submit boost exile seek topic pool sound", "my secret password", USE_TESTNET);
+HDPrivateKey hd("rhythm witness display knock head cable era exact submit boost exile seek topic pool sound", "my secret password");
 
 /* init account key. We will use BIP84 to generate bech32 addresses */
 /* derivation path is "m/84'/0'/0'" for mainnet and "m/84'/1'/0'" for testnet */
@@ -50,10 +50,16 @@ static lv_res_t addr_cb(lv_obj_t * btn){
 And then we just create the label and the buttons in the `main` function:
 
 ```cpp
+  /* Create a QR code to display addresses and xpub */
+  qr = QR(account.xpub());
+  qr.size(300);
+  qr.position(0, 50);
+  qr.align(ALIGN_CENTER);
+
   /* Create a label to display addresses and xpub */
   lbl = Label(account.xpub());
   lbl.size(gui.width()-40, 100); // full width
-  lbl.position(20, 200);
+  lbl.position(20, 400);
   lbl.align_text(ALIGN_TEXT_CENTER);
 
   Button next_btn(addr_cb, "Next");
@@ -88,13 +94,14 @@ using std::string;
 
 GUI gui;     /* our GUI instance */
 Label lbl;   /* label in the global scope, we will change text from the button callback */
+QR qr;       /* QR in the global scope, we will change text from the button callback */
 
 /* we gonna use testnet here, will be used in address generation and key derivation */
 /* to switch to the mainnet just change this to false */
 #define USE_TESTNET true
 
 /* init the key. handy tool: https://iancoleman.io/bip39/ */
-HDPrivateKey hd("rhythm witness display knock head cable era exact submit boost exile seek topic pool sound", "my secret password", USE_TESTNET);
+HDPrivateKey hd("rhythm witness display knock head cable era exact submit boost exile seek topic pool sound", "my secret password");
 
 /* init account key. We will use BIP84 to generate bech32 addresses */
 /* derivation path is "m/84'/0'/0'" for mainnet and "m/84'/1'/0'" for testnet */
@@ -114,9 +121,12 @@ static lv_res_t addr_cb(lv_obj_t * btn){
   if(current_child < 0){
     current_child = 0;
   }
+  string addr = account.child(change).child(current_child).address()+"\n";
+  qr.text("bitcoin:"+addr);
+  qr.align(ALIGN_CENTER);
+
   char derivation_path[40];
   sprintf(derivation_path, "\nm/84'/%d'/0'/%d/%d", USE_TESTNET, change, current_child);
-  string addr = account.child(change).child(current_child).address()+"\n";
   addr += derivation_path;
   lbl.text(addr);
   return LV_RES_OK;
@@ -124,6 +134,8 @@ static lv_res_t addr_cb(lv_obj_t * btn){
 
 static lv_res_t xpub_cb(lv_obj_t * btn){
   lbl.text(account.xpub());
+  qr.text(account.xpub());
+  qr.align(ALIGN_CENTER);
   return LV_RES_OK;
 }
 
@@ -131,10 +143,16 @@ int main() {
 
   gui.init();
 
+  /* Create a QR code to display addresses and xpub */
+  qr = QR(account.xpub());
+  qr.size(300);
+  qr.position(0, 50);
+  qr.align(ALIGN_CENTER);
+
   /* Create a label to display addresses and xpub */
   lbl = Label(account.xpub());
   lbl.size(gui.width()-40, 100); // full width
-  lbl.position(20, 200);
+  lbl.position(20, 400);
   lbl.align_text(ALIGN_TEXT_CENTER);
 
   Button next_btn(addr_cb, "Next");
