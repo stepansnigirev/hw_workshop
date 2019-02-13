@@ -18,4 +18,4 @@ There are two pretty convenient ways to start with mbed:
 - [Step 2. Display.](./2_display/README.md) Drive a display and make a very simple GUI (label + button)
 - [Step 3. Bitcoin!](./3_bitcoin/README.md) Import wallet from mnemonic phrase, generate addresses and show them on screen (QR + text).
 - [Step 4. SD card.](./4_sdcard/README.md) Parse unsigned transaction from electrum, show it on screen, sign and save back to SD card.
-- [Step 5. Final steps.](./5_final/README.md) Show signed transaction as a QR code, generate random mnemonic and store it in the memory, whatever else you can think of.
+- [Step 5. Final steps.](./5_final/README.md) Load mnemonic from memory or generate a random one and store it.

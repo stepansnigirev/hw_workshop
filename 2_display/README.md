@@ -2,6 +2,8 @@
 
 Code on mbed: https://os.mbed.com/users/stepansnigirev/code/2_display/
 
+F746 board: https://os.mbed.com/users/stepansnigirev/code/2_display_F7/
+
 Here we start with a simple program that creates a label and a button. The label shows a value of a counter and the button increases this counter by 1.
 
 We will use a [littlevgl library](https://littlevgl.com/) to make a GUI. It is a very powerful open-source library with many different components and tools. We can do amazing GUI with it, with animations, antialiasing, custom fonts and components. I recommend looking into that.

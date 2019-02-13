@@ -2,6 +2,8 @@
 
 Code on mbed: https://os.mbed.com/users/stepansnigirev/code/1_blinky/
 
+F746 board: https://os.mbed.com/users/stepansnigirev/code/1_blinky_F7/
+
 **Assignment**: Change the code and drive all 4 LEDs one after another. Like 1-2-3-4-1-2-3-4...
 
 **Advanced**: Check the state of the `USER_BUTTON`, if it is currently pressed - change the direction of the blinking to 4-3-2-1-4-3-2-1.

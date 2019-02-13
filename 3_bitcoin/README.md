@@ -2,6 +2,8 @@
 
 Code on mbed: https://os.mbed.com/users/stepansnigirev/code/3_bitcoin/
 
+F746 board: https://os.mbed.com/users/stepansnigirev/code/3_bitcoin_F7/
+
 Based on what we've learned so far we can now dive into bitcoin. There are a few libraries for embedded systems, we will use [micro-bitcoin](https://github.com/micro-bitcoin/uBitcoin) today. It works with Arduino, mbed and other frameworks and uses OOP approach.
 
 The goal is to display the first receiving address of the wallet.
@@ -100,3 +102,5 @@ int main() {
 ## Solution
 
 [Solution code](https://os.mbed.com/users/stepansnigirev/code/3_bitcoin_solved/), [explanation](./solved.md)
+
+Solution for F746: https://os.mbed.com/users/stepansnigirev/code/3_bitcoin_solved_F7/

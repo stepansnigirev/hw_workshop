@@ -2,6 +2,8 @@
 
 Code: [https://os.mbed.com/users/stepansnigirev/code/4_sdcard/](https://os.mbed.com/users/stepansnigirev/code/4_sdcard/)
 
+For F746 board, this is a good starting point: [https://os.mbed.com/users/roykrikke/code/DISCO-F746NG_BLOCK_DEVICE_WITH_FAT_FILES/](https://os.mbed.com/users/roykrikke/code/DISCO-F746NG_BLOCK_DEVICE_WITH_FAT_FILES/)
+
 SD card is a bit annoying on this board. Sometimes you need to unplug the device from power and plug it back to make SD card to work. Not my fault, conflicts of the latests mbed builds and SD card driver by STMicroelectronics... I hope it will be fixed soon.
 
 **Assignment**: Load electrum transaction from the SD card, parse, sign and write back to SD card or display as base43 QR code.
