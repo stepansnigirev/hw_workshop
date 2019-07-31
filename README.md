@@ -1,21 +1,52 @@
-# DIY Hardware wallet workshop
+# DIY Hardware Wallet Workshop
 
-During this workshop we will do an air-gapped hardware wallet with SD card support based on [32F469IDISCOVERY](https://www.st.com/en/evaluation-tools/32f469idiscovery.html) board from STMicroelectronics. [Demo video](https://youtu.be/mE-J0Y05qHs).
+Old version of the workshop docs is in the [v1 folder](./v1/)
 
-We will use [mbed](https://www.mbed.com/en/) for development, but in principle you can use any OS / framework and hardware. Bitcoin functionality will also work on Arduino (but only 32-bit boards). You may need to change SD card and display libraries though.
+[Slides](./slides.pdf)
 
-If you want to start a bitcoin hobby project, feel free to contact me and ask questions. I will be glad to help. Email: stepan@cryptoadvance.io, Telegram: https://t.me/stepansnigirev
+## Required hardware
 
-## Setting up environment
+- 32F469I-Discovery dev board from ST Microelectronics from any electronics store like [Mouser](https://www.mouser.com/ProductDetail/STMicroelectronics/STM32F469I-DISCO?qs=kWQV1gtkNndotCjy2DKZ4w%3D%3D), [Digikey](https://www.digikey.com/product-detail/en/stmicroelectronics/STM32F469I-DISCO/497-15990-ND/5428811), [Aliexpress](https://www.aliexpress.com/wholesale?catId=200214206&initiative_id=AS_20190730173121&SearchText=32f469idiscovery&switch_new_app=y), [Waveshare](https://www.waveshare.com/stm32f469i-disco.htm)
+- SD card (16 GB works for sure)
 
-There are two pretty convenient ways to start with mbed:
-- Online: register on [mbed.com](https://www.mbed.com/en/) and click on [Compiler](https://ide.mbed.com/compiler/). You will get to web IDE. Don't forget to add the [board](https://os.mbed.com/platforms/ST-Discovery-F469NI/) to the compiler ("Add to compiler" button).
-- Offline: install [PlatformIO](https://platformio.org/platformio-ide) for Atom or Visual Studio Code.
+## Quick start
 
-## Table of contents
+1. Register on [mbed.com](https://www.mbed.com/en/)
+2. Add hardware to your compiler [here](https://os.mbed.com/platforms/ST-Discovery-F469NI/)
+3. Import the [workshop template](https://os.mbed.com/users/stepansnigirev/code/Fidelity_workshop_template/)
+4. Complete the TODO list
+5. Or check out the [complited version](https://os.mbed.com/users/stepansnigirev/code/Fidelity_workshop_completed/)
+6. Start playing with it and Bitcoin Core using command line interface or this simple [web interface](https://github.com/stepansnigirev/minicore)
 
-- [Step 1. Blinky.](./1_blinky/README.md) Blink with LEDs.
-- [Step 2. Display.](./2_display/README.md) Drive a display and make a very simple GUI (label + button)
-- [Step 3. Bitcoin!](./3_bitcoin/README.md) Import wallet from mnemonic phrase, generate addresses and show them on screen (QR + text).
-- [Step 4. SD card.](./4_sdcard/README.md) Parse unsigned transaction from electrum, show it on screen, sign and save back to SD card.
-- [Step 5. Final steps.](./5_final/README.md) Load mnemonic from memory or generate a random one and store it.
+## Useful notes and references
+
+Theory:
+
+- [mnemonics - bip39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
+- [HD keys - bip32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
+- Derivation pathes for [legacy](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) and [nested](https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki) and [native](https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki) segwit
+- [Partially signed transaction format - bip174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)
+
+Iteresting platforms and devboards:
+
+- [list of mbed-compatible boards](https://os.mbed.com/platforms/)
+- [32-bit boards from Adafruit](https://www.adafruit.com/categories)
+- [ESP-32 boards from M5Stack](https://m5stack.com/)
+- [RISC-V dev boards](https://www.seeedstudio.com/catalogsearch/result/?cat=&q=Risc-V)
+
+Languages and frameworks:
+
+- [ARM Mbed](https://www.mbed.com/en/) ( C++ )
+- [Arduino](https://www.arduino.cc/) ( C++ )
+- [Micropython](http://micropython.org/)
+- [Circuit Python](https://circuitpython.readthedocs.io/)
+- [Embedded Rust](https://www.rust-lang.org/what/embedded)
+- [Tock OS](https://www.tockos.org/)
+
+Bitcoin libraries:
+
+- [micro-bitcoin](https://github.com/micro-bitcoin/uBitcoin)
+- [trezor-crypto](https://github.com/trezor/trezor-firmware)
+- [secp256k1](https://github.com/bitcoin-core/secp256k1) from Bitcoin Core
+- [libwally](https://github.com/ElementsProject/libwally-core) and [esp32 demo](https://github.com/greenaddress/8bkc-wally/)
+
