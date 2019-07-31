@@ -13,12 +13,17 @@ Old version of the workshop docs is in the [v1 folder](./v1/)
 
 1. Register on [mbed.com](https://www.mbed.com/en/)
 2. Add hardware to your compiler [here](https://os.mbed.com/platforms/ST-Discovery-F469NI/)
-3. Import the [workshop template](https://os.mbed.com/users/stepansnigirev/code/Fidelity_workshop_template/)
+3. Import the [workshop template](https://os.mbed.com/users/stepansnigirev/code/workshop_template/)
 4. Complete the TODO list
-5. Or check out the [complited version](https://os.mbed.com/users/stepansnigirev/code/Fidelity_workshop_completed/)
+5. Or check out the [complited version](https://os.mbed.com/users/stepansnigirev/code/workshop_completed/)
 6. Start playing with it and Bitcoin Core using command line interface or this simple [web interface](https://github.com/stepansnigirev/minicore)
 
 ## Useful notes and references
+
+Libraries for microcontrollers worth mentioning:
+
+- [littlevgl](https://littlevgl.com/) - nice graphics library for embedded systems
+- [qrcode](https://github.com/ricmoo/QRCode) library
 
 Theory:
 
